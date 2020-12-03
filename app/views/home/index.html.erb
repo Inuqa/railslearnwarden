@@ -9,4 +9,5 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Example</h1>
-<p>Hola</p>
+<p>Hola <%= current_user.first_name + " " + current_user.last_name %></p>
+<p>You are <%= current_user.roles[0].name %></p>
