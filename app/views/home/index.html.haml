@@ -2,9 +2,10 @@
 - if @current_user
   %h1 Welcome
   %p
-    Hola #{@current_user.first_name + " " + @current_user.last_name}
+    Hola #{@current_user.first_name} #{@current_user.last_name}
   - unless @current_user.roles.empty?
     %p
       You are #{@current_user.roles[0].name}
 - else
-  %p Welcome guest
+  %p
+    Welcome guest
