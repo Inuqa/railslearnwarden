@@ -1,0 +1,31 @@
+%h1
+  Create a new product
+= form_with model: @product, local: true do |form|
+  - if @product.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(user.errors.count, "error")
+        prohibited this user from being saved:
+      %ul
+        - user.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :price
+    = form.text_field :price
+  .field
+    = form.label :stock
+    = form.text_field :stock
+  .field
+    = form.label :image
+    = form.text_field :image
+  .field
+    = form.label :description
+    = form.text_field :description
+  .field
+    = form.label :category
+    = form.collection_select(:category_id, Category.all, :id, :name)
+  .actions
+    = form.submit

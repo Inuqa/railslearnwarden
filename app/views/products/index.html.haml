@@ -1,0 +1,9 @@
+%h1 
+  Products
+
+- @products.each do |product|
+  = product.name
+  = image_tag(product.image, size: "200")
+  = product.price
+  = product.stock
+  = product.description
