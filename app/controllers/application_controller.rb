@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id])
     @current_user
   end
+
+  def require_admin
+    redirect_to root_path unless @current_user.roles.include? Role.find_by(name: 'admin')
+  end
 end
