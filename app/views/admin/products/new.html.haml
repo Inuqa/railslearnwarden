@@ -1,6 +1,6 @@
 %h1
   Create a new product
-= form_with model: @product, local: true do |form|
+= form_with model: [:admin, @product], local: true do |form|
   - if @product.errors.any?
     #error_explanation
       %h2
@@ -20,7 +20,7 @@
     = form.text_field :stock
   .field
     = form.label :image
-    = form.file_field :image
+    = form.file_field :product_image
   .field
     = form.label :description
     = form.text_field :description

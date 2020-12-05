@@ -1,3 +1,4 @@
 %h1 Product
-=@product.name
-=link_to 'Destroy', @product, method: :delete, data: {confirm: 'Are you sure?'}
+= @product.name
+= image_tag @product.product_image.variant(resize_to_limit: [200, 200]).processed
+= link_to 'Destroy', @product, method: :delete, data: {confirm: 'Are you sure?'}

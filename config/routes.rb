@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :products, only: %i[index show]
   namespace :admin do
     resources :products, only: %i[new create destroy]
   end
+  resources :products, only: %i[index show]
   root 'home#index'
   resources :users
   resources :sessions, only: %i[new create destroy]
